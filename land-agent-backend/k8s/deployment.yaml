@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: land-agent-api
+  labels:
+    app: land-agent-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: land-agent-api
+  template:
+    metadata:
+      labels:
+        app: land-agent-api
+    spec:
+      containers:
+      - name: api
+        image: land-agent-api:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: model-storage
+          mountPath: /app/best_model
+      volumes:
+      - name: model-storage
+        persistentVolumeClaim:
+          claimName: model-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: land-agent-trainer
+  labels:
+    app: land-agent-trainer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: land-agent-trainer
+  template:
+    metadata:
+      labels:
+        app: land-agent-trainer
+    spec:
+      containers:
+      - name: trainer
+        image: land-agent-trainer:latest
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        volumeMounts:
+        - name: model-storage
+          mountPath: /app/models
+        - name: mlflow-storage
+          mountPath: /app/mlruns
+      volumes:
+      - name: model-storage
+        persistentVolumeClaim:
+          claimName: model-pvc
+      - name: mlflow-storage
+        persistentVolumeClaim:
+          claimName: mlflow-pvc 

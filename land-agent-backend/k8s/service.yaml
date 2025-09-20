@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: land-agent-api
+spec:
+  selector:
+    app: land-agent-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mlflow
+spec:
+  selector:
+    app: mlflow
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP 

@@ -1,0 +1,36 @@
+FROM jupyter/scipy-notebook:latest
+
+# Switch to root for system package installation
+USER root
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Switch back to jovyan user
+USER jovyan
+
+# Install Python dependencies
+COPY requirements.txt /tmp/requirements.txt
+COPY requirements-dev.txt /tmp/requirements-dev.txt
+
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements-dev.txt
+
+# Install Jupyter extensions
+RUN pip install --no-cache-dir \
+    jupyterlab-git \
+    jupyterlab-github \
+    jupyterlab-lsp \
+    python-lsp-server[all]
+
+# Copy project files
+COPY . /home/jovyan/work/land-agent-backend
+
+# Set working directory
+WORKDIR /home/jovyan/work
+
+# Expose Jupyter port
+EXPOSE 8888

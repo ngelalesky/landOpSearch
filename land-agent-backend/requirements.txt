@@ -1,0 +1,9 @@
+apache-airflow>=2.7.0
+apache-airflow-providers-amazon>=8.0.0
+numpy>=1.24.0
+Pillow>=10.0.0
+requests>=2.31.0
+gymnasium>=0.29.1
+stable-baselines3>=2.2.1
+mlflow>=2.9.2
+torch>=2.1.0 

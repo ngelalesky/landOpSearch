@@ -1,0 +1,48 @@
+contexts:
+    - name: Data Ingestion
+      path: data_ingestion/
+      description: >
+        Airflow DAGs and Python scripts that pull raw GIS + market data into S3/PostGIS.
+      prompt: >
+      You are a data pipeline engineer building DAGs to fetch and preprocess land feature data (e.g., soil, water, satellite imagery).  
+    - name: Preprocessing
+      path: preprocessing/
+      description: >
+        GeoPandas/PyTorch Dataset transforms, normalization, PCA on imagery/features.
+    - name: Env Service
+      path: env_service/
+      description: >
+        FastAPI wrapper around the Gym env (LandOpportunityEnv) for scalable RL.
+    - name: Trainer
+      path: trainer/
+      description: >
+        PPO/A2C training loops, Optuna hyperopt, MLflow logging.
+      prompt: >
+      You are a reinforcement learning engineer building training loops for a land opportunity search agent.
+    - name: Inference API
+      path: inference_api/
+      description: >
+        FastAPI predict endpoint for deployed agents.
+      prompt: >
+      You are a software engineer building a FastAPI endpoint for a land opportunity search agent.
+    - name: Kubernetes & Infra
+      path: k8s/
+      description: >
+        Helm charts, Kubernetes manifests, Prometheus/Grafana, Kafka wiring.
+      prompt: >
+      You are a software engineer building Kubernetes manifests and Helm charts for a land opportunity search agent.
+  flows:
+    - name: End‑to‑End RL Pipeline
+      description: |
+        Orchestrate: ingest → preprocess → train → register → serve.
+      contexts:
+        - Data Ingestion
+        - Preprocessing
+        - Env Service
+        - Trainer
+        - Inference API
+        - Kubernetes & Infra
+  contexts:
+    default:
+      prompt: >
+        You are helping develop a land opportunity search agent with a reinforcement learning backend. Assist in architecting the system.

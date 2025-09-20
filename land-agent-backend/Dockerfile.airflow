@@ -1,0 +1,30 @@
+FROM apache/airflow:2.7.0-python3.10
+
+# Switch to root to install system dependencies
+USER root
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Switch back to airflow user
+USER airflow
+
+# Install Python dependencies
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Copy DAGs and data ingestion modules
+COPY airflow/dags /opt/airflow/dags
+COPY data_ingestion /opt/airflow/data_ingestion
+
+# Set environment variables
+ENV AIRFLOW__CORE__LOAD_EXAMPLES=False
+ENV AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
+
+# Create necessary directories
+RUN mkdir -p /opt/airflow/logs /opt/airflow/data
+
+# Expose port
+EXPOSE 8080
