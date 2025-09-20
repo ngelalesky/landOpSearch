@@ -15,7 +15,7 @@ Thank you for your interest in contributing to Land Opportunity Search! This doc
 
 1. **Fork and clone the repository**
 ```bash
-git clone https://github.com/yourusername/landOpSearch.git
+git clone https://github.com/ngelalesky/landOpSearch.git
 cd landOpSearch
 ```
 
@@ -379,7 +379,7 @@ For security vulnerabilities, please email security@landopsearch.com instead of 
 - **GitHub Discussions**: For questions and general discussion
 - **GitHub Issues**: For bug reports and feature requests
 - **Discord**: Join our community server
-- **Email**: dev@landopsearch.com
+- **Email**: hinafritechnology@gmail.com
 
 ### Maintainers
 
@@ -403,7 +403,7 @@ We pledge to make participation in our project a harassment-free experience for 
 
 ### Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at conduct@landopsearch.com.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at hinafritechnology@gmail.com.
 
 ---
 
