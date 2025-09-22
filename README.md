@@ -21,7 +21,7 @@
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/landOpSearch.git
+git clone https://github.com/ngelalesky/landOpSearch.git
 cd landOpSearch/land-agent-backend
 ```
 
