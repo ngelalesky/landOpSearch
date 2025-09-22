@@ -365,10 +365,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Getting Help
 
-- 📖 **Documentation**: Check the [wiki](https://github.com/yourusername/landOpSearch/wiki)
-- 🐛 **Bug Reports**: [Open an issue](https://github.com/yourusername/landOpSearch/issues)
-- 💬 **Discussions**: [Join our discussions](https://github.com/yourusername/landOpSearch/discussions)
-- 📧 **Email**: support@landopsearch.com
+- 📖 **Documentation**: Check the [wiki](https://github.com/ngelalesky/landOpSearch/wiki)
+- 🐛 **Bug Reports**: [Open an issue](https://github.com/ngelalesky/landOpSearch/issues)
+- 💬 **Discussions**: [Join our discussions](https://github.com/ngelalesky/landOpSearch/discussions)
+- 📧 **Email**: techstation634@gmail.com
+.com
 
 ### FAQ
 
@@ -376,36 +377,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 A: The model achieves 85%+ accuracy on validation data, but performance may vary based on data quality and regional characteristics.
 
 **Q: Can I use this for commercial purposes?**
-A: Yes, this project is MIT licensed and can be used for commercial purposes.
+A: No, this project can not be use for commercial purpose.
 
 **Q: How do I add new data sources?**
 A: Extend the data ingestion pipeline in `data_ingestion/` and update the Airflow DAGs.
 
-## 🗺️ Roadmap
-
-### Phase 1: Foundation (Weeks 1-3)
-- [ ] Real data source integration
-- [ ] Database implementation
-- [ ] Security framework
-- [ ] Testing suite
-
-### Phase 2: Production (Weeks 4-7)
-- [ ] Monitoring & observability
-- [ ] CI/CD pipeline
-- [ ] Performance optimization
-- [ ] High availability
-
-### Phase 3: Advanced Features (Weeks 8-13)
-- [ ] Model A/B testing
-- [ ] Real-time data streaming
-- [ ] Web dashboard
-- [ ] Mobile API
-
-### Phase 4: Scale & Optimization (Weeks 14-16)
-- [ ] Horizontal scaling
-- [ ] Advanced analytics
-- [ ] Compliance features
-- [ ] Performance tuning
 
 ## 🙏 Acknowledgments
 
@@ -418,6 +394,6 @@ A: Extend the data ingestion pipeline in `data_ingestion/` and update the Airflo
 
 **Built with ❤️ for the future of intelligent land development**
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/landOpSearch.svg?style=social&label=Star)](https://github.com/yourusername/landOpSearch)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/landOpSearch.svg?style=social&label=Fork)](https://github.com/yourusername/landOpSearch/fork)
-[![GitHub watchers](https://img.shields.io/github/watchers/yourusername/landOpSearch.svg?style=social&label=Watch)](https://github.com/yourusername/landOpSearch)
+[![GitHub stars](https://img.shields.io/github/stars/ngelalesky/landOpSearch.svg?style=social&label=Star)](https://github.com/ngelalesky/landOpSearch)
+[![GitHub forks](https://img.shields.io/github/forks/ngelalesky/landOpSearch.svg?style=social&label=Fork)](https://github.com/ngelalesky/landOpSearch/fork)
+[![GitHub watchers](https://img.shields.io/github/watchers/ngelalesky/landOpSearch.svg?style=social&label=Watch)](https://github.com/ngelalesky/landOpSearch)
